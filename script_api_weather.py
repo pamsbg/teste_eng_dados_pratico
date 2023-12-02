@@ -23,7 +23,7 @@ def chamar_api(api_query):
 
     
 def gerar_coordenadas(city, state, country):
-    api_key ="f1afc2f58ef497b608768be2ac3fd373"
+    api_key ="api_key"
     api_query="http://api.openweathermap.org/geo/1.0/direct?q=" +city +","+ state +"," + country + "&limit=1&appid=" +api_key
     resultados = chamar_api(api_query)
     print(resultados)
@@ -37,13 +37,12 @@ def gerar_coordenadas(city, state, country):
 
 
 def consultar_tempo(city, state, country):
-    api_key ="42fca0bce7ab3caca0df1defc3bd1970"
+    api_key ="api_key"
     conjunto_dados=[]
     lat, lon = gerar_coordenadas(city, state, country)
     lat = str(lat)
     lon = str(lon)
     api_query= "https://api.openweathermap.org/data/3.0/onecall?lat=" + lat + "&lon=" + lon +"&appid="+ api_key
-    #api_query= "https://api.openweathermap.org/data/3.0/onecall?lat=-23.5324859&lon=-46.7916801&appid=42fca0bce7ab3caca0df1defc3bd1970"
     resultados = chamar_api(api_query)
     print(resultados)
        
